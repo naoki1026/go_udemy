@@ -1,26 +1,19 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
+import "fmt"
 
 func main() {
-	var x int = 1
-	xx := float64(x)
+	var a [2]int
+	a[0] = 100
+	a[1] = 200
+	fmt.Println(a)
 
-	//型、値、小数
-	fmt.Printf("%T %v %f\n", xx, xx, xx)
+	//配列は最初に定義したサイズを変更することができない
+	var b = [2]int{100, 200}
+	fmt.Println(b)
 
-	//型、値、整数
-	var y = 1.2
-	yy := int(y)
-	fmt.Printf("%T %v %d\n", yy, yy, yy)
-
-	//文字型を数値型に変換
-	var s string = "14"
-
-	//アンスコにすることで、エラーが表示されなくなる
-	i, _ := strconv.Atoi(s)
-	fmt.Printf("%T %v\n", i, i)
+	//スライスを使用することで追加することができる
+	var c = []int{100, 200}
+	c = append(c, 300)
+	fmt.Println(c)
 }
