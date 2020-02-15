@@ -3,21 +3,17 @@ package main
 import "fmt"
 
 func main() {
-	n := []int{1, 2, 3, 4, 5}
-	fmt.Println(n)
-	fmt.Println(n[1])
 
-	//カンマの数を○番目を指定
-	fmt.Println(n[2:4])
-	fmt.Println(n[2:])
-	fmt.Println(n[:4])
-	fmt.Println(n[:])
+	//長さは3、キャパシティは5である、このままだと000が入る
+	n := make([]int, 3, 5)
 
-	//複数定義することができる
-	var board = [][]int{
-		[]int{1, 2, 3},
-		[]int{4, 5, 6},
-		[]int{7, 8, 9},
+	//長さはlen、キャパシティはcap
+	fmt.Printf("len=%d cap=%d value=%v", len(n), cap(n), n)
+
+	c = make([]int, 0, 5)
+	for i := 0; i < 5; i++ {
+		c = append(c, i)
+		fmt.Println(c)
 	}
-	fmt.Println(board)
+	fmt.Println(c)
 }
