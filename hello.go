@@ -3,17 +3,21 @@ package main
 import "fmt"
 
 func main() {
-	var a [2]int
-	a[0] = 100
-	a[1] = 200
-	fmt.Println(a)
+	n := []int{1, 2, 3, 4, 5}
+	fmt.Println(n)
+	fmt.Println(n[1])
 
-	//配列は最初に定義したサイズを変更することができない
-	var b = [2]int{100, 200}
-	fmt.Println(b)
+	//カンマの数を○番目を指定
+	fmt.Println(n[2:4])
+	fmt.Println(n[2:])
+	fmt.Println(n[:4])
+	fmt.Println(n[:])
 
-	//スライスを使用することで追加することができる
-	var c = []int{100, 200}
-	c = append(c, 300)
-	fmt.Println(c)
+	//複数定義することができる
+	var board = [][]int{
+		[]int{1, 2, 3},
+		[]int{4, 5, 6},
+		[]int{7, 8, 9},
+	}
+	fmt.Println(board)
 }
