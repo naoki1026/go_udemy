@@ -1,47 +1,25 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
-// func main() {
-// 	var i int = 1
-// 	var f64 float64 = 1.2
-// 	var s string = "text"
-// 	var t bool = true
-// 	var f bool = false
-// 	fmt.Println(i, f64, s, t, f)
-// }
-
-//カッコでひとまとめにすることができる
-// func main() {
-// 	var (
-// 		i   int     = 1
-// 		f64 float64 = 1.2
-// 		s   string  = "text"
-// 		t   bool    = true
-// 		f   bool    = false
-// 	)
-// 	fmt.Println(i, f64, s, t, f)
-// }
-
-//初期化する場合
 func main() {
-	var (
-		i   int
-		f64 float64
-		s   string
-		t   bool
-		f   bool
-	)
-	fmt.Println(i, f64, s, t, f)
+	var s = "Hello World!"
+	//○番目のアルファベットを取り出すことができる
+	fmt.Println(string("HelloWorld!"[1]))
 
-	//関数内でしか宣言することができない
-	xi := 1
-	xf64 := 1.2
-	xs := "test"
-	xt := true
-	xf := false
-	fmt.Println(xi, xf64, xs, xt, xf)
+	//条件に合致する初めの１回だけ文字を置き換えることができる
+	//実際のs自体は置き換わらないので注意
+	fmt.Println(strings.Replace(s, "H", "K", 1))
 
-	//変数の型を調べることができる
-	fmt.Printf("%T\n", xf64)
+	//直接sの中に入れることで文字を置き換えることができる
+	s = strings.Replace(s, "H", "X", 1)
+	fmt.Println(s)
+	fmt.Println("test\n" +
+		"test")
+	fmt.Println(`test
+test`)
+
 }
