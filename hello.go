@@ -2,24 +2,24 @@ package main
 
 import "fmt"
 
-//可変長引数
-//関数の定義時に取り決めた引数を増やすことができないため、...intを使用する
-func foo(params ...int) {
-
-	//lenは長さ
-	fmt.Println(len(params), params)
-	for _, param := range params {
-		fmt.Println(param)
+func by2 (num int) string {
+	if num % 2 == 0 {
+		return "ok"
+	} else {
+		return "n0"
 	}
 }
 
 func main() {
-	foo()
-	foo(10, 20)
-	foo(10, 20, 30)
+	num := 5
+	if num%2 == 0 {
+		fmt.Println("by 2")
+	} else {
+		fmt.Println("else")
+	}
 
-	s := []int{1, 2, 3}
-	fmt.Println(s)
-
-	foo(s...)
+	//以下のように１つの式にまとめることができる
+	if result2 := by2(50); result2 == "ok"{
+		fmt.Println("great2")
+	}
 }
