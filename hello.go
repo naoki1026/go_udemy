@@ -2,24 +2,26 @@ package main
 
 import "fmt"
 
-func by2 (num int) string {
-	if num % 2 == 0 {
-		return "ok"
-	} else {
-		return "n0"
-	}
-}
-
 func main() {
-	num := 5
-	if num%2 == 0 {
-		fmt.Println("by 2")
-	} else {
-		fmt.Println("else")
-	}
+	for i := 1; i < 10; i++ {
+		fmt.Println(i)
 
-	//以下のように１つの式にまとめることができる
-	if result2 := by2(50); result2 == "ok"{
-		fmt.Println("great2")
+		//続ける
+		if i == 3 {
+			fmt.Println("continue")
+			continue
+		}
+
+		//ここでfor文がストップする
+		if i == 6 {
+			fmt.Println("break")
+			break
+		}
+
+	}
+	sum := 1
+	for sum < 10 {
+		sum += sum
+		fmt.Println(sum)
 	}
 }
