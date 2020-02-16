@@ -1,48 +1,35 @@
 package main
 
 import "fmt"
-
-// func main() {
-// 	var n int = 100
-// 	fmt.Println(n)
-
-// 	//100を入れたメモリのアドレスが表示される
-// 	fmt.Println(&n)
-
-// 	//*intはintのポイント型という意味である
-// 	var p *int = &n
-// 	fmt.Println(p)
-// 	fmt.Println(*p)
-// }
-
-// func one(x int){
-// 	x = 1
-// }
-
 // func main(){
-// 	var n int = 100
 
-// 	//nという値だけをoneという関数に渡している
-// 	//oneにはx=1と定義してあるが、影響していない
-// 	one(n)
-// 	fmt.Println(n)
+// 	//値がない状態でメモリだけ確保したい
+// 	//メモリの領域が確保される
+// 	var p *int = new(int)
+// 	fmt.Println(p)
+
+// 	//メモリの領域が確保されていない
+// 	var p2 *int
+// 	fmt.Println(p2)
 // }
-
-
-//1.ポイント型にはアスタリスクをつける
-//3.xのままだとアドレスを入れることができないため、
-//最終的にはデリファンレンス、実体の中に1を入れる
-//xはnのアドレスなので、その中に1を入れている
-func one(x *int){
-	*x = 1
-}
 
 func main(){
-	var n int = 100
+	s := make([]int, 0)
+	fmt.Printf("%T\n", s)
 
-	//2.ポイント型にはアドレスを渡す必要があるため&をつける
-	//100のアドレスをここで渡している
-	one(&n)
-	fmt.Println(n)
-	fmt.Println(&*&n)
+	m := make(map[string]int)
+	fmt.Printf("%T\n", m)
+
+	var p *int= new(int)
+	fmt.Printf("%T\n", p)
 }
+
+// 	var p *int = new(int)
+// 	fmt.Println(*p)
+// 	*p++
+// 	fmt.Println(*p)
+
+
+// 	var p2 *int
+// 	fmt.Println(p2)
+// }
