@@ -2,18 +2,10 @@ package main
 
 import "fmt"
 
-func getOsName() string{
-	return "mac"
-
-}
-
 func main() {
-	switch os := getOsName(); os{
-	case "mac":
-		fmt.Println("Mac!!")
-	case "windows":
-		fmt.Println("windows!!")
-	default:
-		fmt.Println("default")
-	}
+	defer fmt.Println("world")
+	fmt.Println("HelloWorld")
+	defer fmt.Println(1)
+	defer fmt.Println(2)
+	defer fmt.Println(3)
 }
