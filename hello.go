@@ -1,35 +1,22 @@
 package main
 
 import "fmt"
-// func main(){
 
-// 	//値がない状態でメモリだけ確保したい
-// 	//メモリの領域が確保される
-// 	var p *int = new(int)
-// 	fmt.Println(p)
-
-// 	//メモリの領域が確保されていない
-// 	var p2 *int
-// 	fmt.Println(p2)
-// }
-
-func main(){
-	s := make([]int, 0)
-	fmt.Printf("%T\n", s)
-
-	m := make(map[string]int)
-	fmt.Printf("%T\n", m)
-
-	var p *int= new(int)
-	fmt.Printf("%T\n", p)
+type Vertex struct {
+	//小文字にしてしまうと外部からアクセスできなくなってしまう
+	// X int
+	// Y int
+	//並べて記述することもできる
+	X, Y int
+	Z string
 }
 
-// 	var p *int = new(int)
-// 	fmt.Println(*p)
-// 	*p++
-// 	fmt.Println(*p)
+//構造体
+func main(){
+	v := Vertex{X:1, Y:2}
+	fmt.Println(v)
+	fmt.Println(v.X, v.Y)
 
-
-// 	var p2 *int
-// 	fmt.Println(p2)
-// }
+	v1 := Vertex{1, 2, "test"}
+	fmt.Println(v1)
+}
