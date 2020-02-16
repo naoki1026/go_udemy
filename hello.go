@@ -2,10 +2,23 @@ package main
 
 import "fmt"
 
+func thirdPartyConnectDB(){
+	//panicは自分で何を修正すれば良いのかわからない時なので、
+	//そのようなことがないようにしておくことが大事である
+	panic("Unable to conenct to Database")
+}
+
+func save(){
+	defer func(){
+
+		//panicでシステムが強制終了しないようにrecoverしている
+		s := recover()
+		fmt.Println(s)
+		}()
+		thirdPartyConnectDB()
+	}
+
 func main() {
-	defer fmt.Println("world")
-	fmt.Println("HelloWorld")
-	defer fmt.Println(1)
-	defer fmt.Println(2)
-	defer fmt.Println(3)
+	save()
+	fmt.Println("OK?")
 }
